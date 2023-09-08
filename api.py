@@ -10,8 +10,8 @@ async def hello():
     return {"message": "Hello World 1"}
 
 
-@app.get('/message')
-async def print_message(name: str = Query(None, alias="name")):
+@app.get('/print-message')
+async def get_message(name: str = Query(None, alias="name")):
     
     message = print_message(name)
     
