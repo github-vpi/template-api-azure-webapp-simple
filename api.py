@@ -5,6 +5,21 @@ from domain import print_message
 
 app = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+# Thiết lập các giá trị cho CORS
+origins = ["*"]
+# Ví dụ:
+# origins = ["https://abc.com",
+#           "113.112.0.1"]
+
+# Áp dụng middleware CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get('/hello')
 async def hello():
