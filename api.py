@@ -9,7 +9,10 @@ app = FastAPI()
 @app.get('/hello')
 async def hello():
     return {"message": "Hello World 2"}
-
+    
+@app.post('/webhook-zalo')
+async def webhook():
+    return {"message": "Hello World 3"}
 
 @app.get('/print-message')
 async def get_message(name: str = Query(None, alias="name")):
